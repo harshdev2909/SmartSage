@@ -1,0 +1,14 @@
+flask>=2.0.0
+flask-cors>=4.0.0
+python-dotenv>=1.0.0
+openai>=1.0.0
+spacy>=3.0.0
+pymongo>=4.0.0
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+docx2txt>=0.8
+rank-bm25>=0.2.2
+langchain-openai>=0.0.2
+requests>=2.31.0
+google-generativeai>=0.3.0
+bson>=0.5.10

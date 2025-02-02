@@ -1,0 +1,444 @@
+{
+  "summary": {
+    "total_files": 14,
+    "total_flashcards": 70,
+    "processed_files": [
+      "A_.pdf",
+      "B&B.pdf",
+      "deepa.pdf",
+      "FOL.pdf",
+      "Fuzzy controller question.pdf",
+      "Fuzzy-2.pdf",
+      "Game Theory.pdf",
+      "Genetic Algorithm.pdf",
+      "Heuristic Search.pdf",
+      "Ontology.pdf",
+      "Planning.pdf",
+      "PropositionalLogic.pdf",
+      "Protege 5 New OWL Pizza Tutorial V3.2.pdf",
+      "State Space Search.pdf"
+    ]
+  },
+  "flashcards": [
+    {
+      "question": "What is the A* algorithm?",
+      "answer": "A* is a pathfinding algorithm used to find the shortest path between two points on a graph. It uses a heuristic function to guide its search.",
+      "topic": "A* Algorithm",
+      "source": "Content provided"
+    },
+    {
+      "question": "What does it mean for A* to be 'admissible'?",
+      "answer": "An admissible A* algorithm guarantees that it will find the shortest path to the goal, if a path exists. It requires that the heuristic function never overestimates the actual cost to reach the goal.",
+      "topic": "A* Algorithm",
+      "source": "Content provided"
+    },
+    {
+      "question": "How does A* use a heuristic function?",
+      "answer": "A* uses a heuristic function (h(n)) to estimate the cost from a node (n) to the goal. It combines this with the actual cost from the start to the node (g(n)) to prioritize nodes to explore.",
+      "topic": "A* Algorithm",
+      "source": "Content provided"
+    },
+    {
+      "question": "Why is admissibility important for A*?",
+      "answer": "Admissibility ensures that A* finds the optimal path. If the heuristic overestimates the cost, A* may miss the optimal path by prematurely choosing other, seemingly cheaper options that lead to a suboptimal solution.",
+      "topic": "A* Algorithm",
+      "source": "Content provided"
+    },
+    {
+      "question": "How is the admissibility of A* proven?",
+      "answer": "The admissibility of A* is proven through a series of lemmas that demonstrate that if a path exists, A* will eventually find the shortest one. This relies on the property that the heuristic never overestimates the true cost.",
+      "topic": "A* Algorithm",
+      "source": "Content provided"
+    },
+    {
+      "question": "What is the core idea behind the Branch and Bound algorithm?",
+      "answer": "Branch and Bound systematically explores the solution space by dividing it into subproblems (branching) and eliminating subproblems that cannot lead to an optimal solution (bounding).",
+      "topic": "Branch & Bound",
+      "source": "Branch & Bound text"
+    },
+    {
+      "question": "What does 'branching' refer to in Branch and Bound?",
+      "answer": "Branching refers to the process of dividing a problem into smaller, more manageable subproblems. This usually involves making choices or assigning values to variables.",
+      "topic": "Branch & Bound",
+      "source": "Branch & Bound text"
+    },
+    {
+      "question": "What does 'bounding' refer to in Branch and Bound?",
+      "answer": "Bounding involves calculating an upper or lower bound on the objective function for a given subproblem. This helps to prune (eliminate) subproblems that cannot improve on the best solution found so far.",
+      "topic": "Branch & Bound",
+      "source": "Branch & Bound text"
+    },
+    {
+      "question": "How does Branch and Bound use the bounds to prune subproblems?",
+      "answer": "If the bound of a subproblem is worse than the currently known best solution, then that subproblem and all of its descendants can be eliminated from further consideration.",
+      "topic": "Branch & Bound",
+      "source": "Branch & Bound text"
+    },
+    {
+      "question": "Why is Branch and Bound considered a 'divide and conquer' strategy?",
+      "answer": "Branch and Bound divides the original problem into smaller subproblems (divide) and then intelligently selects and evaluates (conquer) subproblems to systematically find the best possible solution, similar to how many divide-and-conquer algorithms work.",
+      "topic": "Branch & Bound",
+      "source": "Branch & Bound text"
+    },
+    {
+      "question": "What is the core principle of soft computing?",
+      "answer": "To exploit tolerance for imprecision, uncertainty, partial truth, and approximation to achieve tractability, robustness, and low solution cost.",
+      "topic": "Soft Computing",
+      "source": "deepa.pdf"
+    },
+    {
+      "question": "Name the three major components of soft computing focused on in the book?",
+      "answer": "Neural Networks, Fuzzy Logic, and Genetic Algorithms.",
+      "topic": "Soft Computing",
+      "source": "deepa.pdf"
+    },
+    {
+      "question": "What is a key addition in the 3rd edition of the book regarding neural networks?",
+      "answer": "The book includes a new chapter (Chapter 7) discussing Third-Generation Neural Networks and their training algorithms.",
+      "topic": "Neural Networks",
+      "source": "deepa.pdf"
+    },
+    {
+      "question": "What is the new chapter (19) regarding fuzzy logic focuses on?",
+      "answer": "Type-2 Fuzzy Sets and Embedded Fuzzy Sets, including their development, operations, and properties.",
+      "topic": "Fuzzy Logic",
+      "source": "deepa.pdf"
+    },
+    {
+      "question": "What is Differential Evolution as discussed in the context of this book?",
+      "answer": "A fundamental algorithm (introduced in Chapter 22), its concepts and operators are explained, likely for optimization purposes.",
+      "topic": "Differential Evolution",
+      "source": "deepa.pdf"
+    },
+    {
+      "question": "What are the limitations of Propositional Logic?",
+      "answer": "Propositional logic has limited expressive power; it cannot easily express general rules or relationships between objects. For example, it cannot easily represent 'pits cause breezes in adjacent squares' without writing a separate sentence for each square.",
+      "topic": "Propositional Logic vs. First-Order Logic",
+      "source": "FOL.pdf"
+    },
+    {
+      "question": "What are the basic elements of First-Order Logic (FOL)?",
+      "answer": "The basic elements of FOL are: Constants (e.g., KingJohn, 2), Predicates (e.g., Brother, >), Functions (e.g., Sqrt, LeftLegOf), Variables (e.g., x, y), Connectives (\u00ac, \u2227, \u2228, \u21d2, \u21d4), Equality (=), and Quantifiers (\u2200, \u2203).",
+      "topic": "Syntax of First-Order Logic",
+      "source": "FOL.pdf"
+    },
+    {
+      "question": "What is the difference between an atomic and a complex sentence in FOL?",
+      "answer": "An atomic sentence is a predicate applied to terms (e.g., Brother(KingJohn,Richard)) or an equality between terms (e.g., x = y). A complex sentence is formed by combining atomic sentences using logical connectives (e.g., S1 \u2227 S2, S1 \u21d2 S2).",
+      "topic": "Syntax of First-Order Logic",
+      "source": "FOL.pdf"
+    },
+    {
+      "question": "Explain the meaning of Universal Quantification (\u2200) in FOL.",
+      "answer": "Universal quantification (\u2200x P) means 'for all x, P is true.' It asserts that the sentence P holds true for every object in the domain. For example, \u2200x At(x,NUS) \u21d2 Smart(x) means 'Everyone at NUS is smart'.",
+      "topic": "Quantifiers in First-Order Logic",
+      "source": "FOL.pdf"
+    },
+    {
+      "question": "Explain the meaning of Existential Quantification (\u2203) in FOL.",
+      "answer": "Existential quantification (\u2203x P) means 'there exists an x such that P is true.' It asserts that the sentence P holds true for at least one object in the domain. For example, \u2203x At(x,NUS) \u2227 Smart(x) means 'Someone at NUS is smart'.",
+      "topic": "Quantifiers in First-Order Logic",
+      "source": "FOL.pdf"
+    },
+    {
+      "question": "What does 'derivation (&)' refer to in the context of the document?",
+      "answer": "Derivation (&) refers to the angle of the object relative to the robot. This angle helps the robot decide which direction to move.",
+      "topic": "Fuzzy Logic Control",
+      "source": "Content provided"
+    },
+    {
+      "question": "What is the significance of values like '-22' (D lol -22) in relation to the robot's movement?",
+      "answer": "Values like '-22' indicate the derivation (&) value. It tells the robot how much it needs to adjust its direction, specifically relating to the direction the robot must turn to face the desired object.",
+      "topic": "Fuzzy Logic Control",
+      "source": "Content provided"
+    },
+    {
+      "question": "What does the abbreviation 'SD' likely represent in the context of linguistic variables?",
+      "answer": "'SD' likely stands for 'Small Distance' and it is a linguistic variable.",
+      "topic": "Fuzzy Sets",
+      "source": "Content provided"
+    },
+    {
+      "question": "In the given decision table, what would be the output ('M', 'X' or 'HG') when the input is <Small dist> and Medium Grade?",
+      "answer": "The output is 'M'.",
+      "topic": "Fuzzy Logic Control",
+      "source": "Content provided"
+    },
+    {
+      "question": "What is the purpose of the rules such as 'if (Small dist) and MG then X'?",
+      "answer": "These are fuzzy rules that map input linguistic variables and their associated degrees of membership to an output variable, enabling decision-making in uncertain or fuzzy situations, i.e. a fuzzy inference system.",
+      "topic": "Fuzzy Logic Control",
+      "source": "Content provided"
+    },
+    {
+      "question": "What is the fundamental concept of 'Fuzzy' within the context of this topic?",
+      "answer": "Fuzzy refers to the idea that things can have degrees of membership to a set, rather than being strictly in or out.  It allows for partial truths.",
+      "topic": "Fuzzy",
+      "source": "Generated from provided content"
+    },
+    {
+      "question": "What is a 'Fuzzy Membership' in this context?",
+      "answer": "Fuzzy membership defines the degree to which an element belongs to a fuzzy set, ranging from 0 (not a member) to 1 (full member).",
+      "topic": "Fuzzy Membership",
+      "source": "Generated from provided content"
+    },
+    {
+      "question": "What is meant by 'Fuzzy Operations'?",
+      "answer": "Fuzzy operations are mathematical processes (like union, intersection, complement) that allow us to manipulate fuzzy sets and their membership values.",
+      "topic": "Fuzzy Operations",
+      "source": "Generated from provided content"
+    },
+    {
+      "question": "Define 'Fuzzy Relations'.",
+      "answer": "Fuzzy relations describe the relationship between elements of different fuzzy sets.  They indicate the degree to which a pair of elements are related.",
+      "topic": "Fuzzy Relations",
+      "source": "Generated from provided content"
+    },
+    {
+      "question": "What is the purpose of 'Defuzzyfication'?",
+      "answer": "Defuzzification is the process of converting a fuzzy set result into a single crisp (numerical) output, making it usable in practical applications.",
+      "topic": "Defuzzification",
+      "source": "Generated from provided content"
+    },
+    {
+      "question": "What is a Game Tree in the context of game playing?",
+      "answer": "A Game Tree is a tree-like structure representing the possible moves and outcomes in a game. Nodes represent game states, and branches represent moves between those states.",
+      "topic": "Game Playing",
+      "source": "Provided Content"
+    },
+    {
+      "question": "What do the letters 'D', 'L', and 'W' likely represent in the game record 'DDLWDDLLWDDDDL'?",
+      "answer": "'D' likely represents a Draw, 'L' represents a Loss, and 'W' represents a Win for a player in a game.",
+      "topic": "Game Playing",
+      "source": "Provided Content"
+    },
+    {
+      "question": "In the sequence '577<=78>=8x beta cut>=7', what does 'beta cut' indicate?",
+      "answer": "A 'beta cut' indicates that during minimax search with alpha-beta pruning, a branch can be pruned because it's guaranteed to not be better than a previously explored option for the maximizing player.",
+      "topic": "Game Playing - Alpha-Beta Pruning",
+      "source": "Provided Content"
+    },
+    {
+      "question": "In the sequence 'x alpha cut>=512<=128>=8<=7X alpha cut88', what does 'alpha cut' indicate?",
+      "answer": "An 'alpha cut' indicates that during minimax search with alpha-beta pruning, a branch can be pruned because it's guaranteed to not be better than a previously explored option for the minimizing player.",
+      "topic": "Game Playing - Alpha-Beta Pruning",
+      "source": "Provided Content"
+    },
+    {
+      "question": "What does the example 'F (5)BDCA E (4)G (6)HJK (3)L (8)M (3)N (4)O (7)P (9)' likely illustrate?",
+      "answer": "This example likely illustrates a game tree with nodes labeled with letters and corresponding values. It may be used to demonstrate tree traversal or the application of pruning algorithms like minimax or alpha-beta pruning. The values in parentheses represent the scores of the respective leaf nodes.",
+      "topic": "Game Playing",
+      "source": "Provided Content"
+    },
+    {
+      "question": "What is a Genetic Algorithm?",
+      "answer": "A search heuristic that mimics the process of natural selection to find optimal solutions to complex problems.",
+      "topic": "Population Based Methods",
+      "source": "Genetic Algorithm"
+    },
+    {
+      "question": "What is the role of 'population' in a Genetic Algorithm?",
+      "answer": "A population consists of a set of potential solutions (individuals), that are iteratively modified and selected based on their fitness.",
+      "topic": "Population Based Methods",
+      "source": "Genetic Algorithm"
+    },
+    {
+      "question": "Name three main operations used in a Genetic Algorithm.",
+      "answer": "Selection, Crossover (recombination), and Mutation.",
+      "topic": "Population Based Methods",
+      "source": "Genetic Algorithm"
+    },
+    {
+      "question": "What is the purpose of 'selection' in a Genetic Algorithm?",
+      "answer": "To choose individuals from the population with better fitness scores to become parents for the next generation.",
+      "topic": "Population Based Methods",
+      "source": "Genetic Algorithm"
+    },
+    {
+      "question": "What is the purpose of 'crossover' in a Genetic Algorithm?",
+      "answer": "To combine genetic information from two parent individuals to create new offspring, introducing new combinations of traits.",
+      "topic": "Population Based Methods",
+      "source": "Genetic Algorithm"
+    },
+    {
+      "question": "What is the goal of a heuristic search in the context of problem-solving?",
+      "answer": "To find a good, but not necessarily optimal, solution efficiently by exploring the solution space using a heuristic function to guide the search.",
+      "topic": "Heuristic Search",
+      "source": "Heuristic Search"
+    },
+    {
+      "question": "What is the Travelling Salesman Problem (TSP), and what type of method is often used to tackle it initially?",
+      "answer": "The TSP is a problem where a salesman needs to visit a set of cities and return to the starting city, with the goal of minimizing total travel distance. A common initial method is a greedy constructive method.",
+      "topic": "TSP and Greedy Methods",
+      "source": "Heuristic Search"
+    },
+    {
+      "question": "Explain the concept of 'escaping local optima' in heuristic search algorithms.",
+      "answer": "Escaping local optima refers to the ability of a search algorithm to move away from a suboptimal solution that is better than all of its immediate neighbours, in order to find a better solution elsewhere in the search space.",
+      "topic": "Local Optima",
+      "source": "Heuristic Search"
+    },
+    {
+      "question": "What is the difference between exploration and exploitation in search algorithms, and how is it related to hill climbing?",
+      "answer": "Exploration is searching in diverse areas of the search space, while exploitation focuses on improving upon a known good solution. Hill climbing primarily uses exploitation and needs a strategy to begin with exploration, then transition into exploitation.",
+      "topic": "Exploration vs Exploitation",
+      "source": "Heuristic Search"
+    },
+    {
+      "question": "In the SAT problem example, given the start node '10101', what are the heuristic values for S, B, and E based on the number of clauses satisfied?",
+      "answer": "S = 2, B = 3, E = 4.",
+      "topic": "SAT Problem & Heuristic Values",
+      "source": "Heuristic Search"
+    },
+    {
+      "question": "What is Knowledge Management?",
+      "answer": "Knowledge Management involves methods for creating, sharing, using, and managing knowledge and information. It's about delivering the right information, at the right place and time, to the correct audience in the correct format.",
+      "topic": "Knowledge Management",
+      "source": "Content"
+    },
+    {
+      "question": "What are the main types of knowledge?",
+      "answer": "The main types of knowledge are: Explicit, Tacit, and Implicit.",
+      "topic": "Knowledge Management",
+      "source": "Content"
+    },
+    {
+      "question": "What is an Ontology?",
+      "answer": "An Ontology is a formal, explicit specification of a shared conceptualization. It's a structured mind map, represented visually and in code, that helps both humans and machines understand a domain.",
+      "topic": "Ontology",
+      "source": "Content"
+    },
+    {
+      "question": "What are the three core building blocks of an Ontology?",
+      "answer": "The three core building blocks of an Ontology are: Classes, Relations, and Individuals.",
+      "topic": "Ontology",
+      "source": "Content"
+    },
+    {
+      "question": "What are some examples of Knowledge Representation Languages?",
+      "answer": "Examples of Knowledge Representation Languages include: Knowledge Interchangeable Format (KIF), Common Logic, and Web Ontology Language (OWL).",
+      "topic": "Knowledge Representation Language",
+      "source": "Content"
+    },
+    {
+      "question": "What is State Space Planning?",
+      "answer": "State Space Planning involves searching through possible states to find a path from the initial state to the goal state.",
+      "topic": "State Space Planning",
+      "source": "Planning"
+    },
+    {
+      "question": "What is Goal State Planning?",
+      "answer": "Goal State Planning starts from the goal and works backwards, attempting to find a sequence of actions that could achieve it.",
+      "topic": "Goal State Planning",
+      "source": "Planning"
+    },
+    {
+      "question": "What is Non-Linear Planning?",
+      "answer": "Non-Linear Planning allows for plans where actions are not necessarily in a strict sequence. It permits parallel or interleaved execution of actions.",
+      "topic": "Non-Linear Planning",
+      "source": "Planning"
+    },
+    {
+      "question": "What are Threats in planning?",
+      "answer": "In planning, a Threat occurs when one action undoes the effects of another previously planned action.",
+      "topic": "Planning Threats",
+      "source": "Planning"
+    },
+    {
+      "question": "What is Means-Ends Analysis?",
+      "answer": "Means-Ends Analysis involves identifying the differences between the current state and the goal state, and then selecting actions that reduce these differences.",
+      "topic": "Means-Ends Analysis",
+      "source": "Planning"
+    },
+    {
+      "question": "What are the logical constants in Propositional Logic?",
+      "answer": "The logical constants are 'true' and 'false'.",
+      "topic": "Propositional Logic",
+      "source": "PropositionalLogic.pdf"
+    },
+    {
+      "question": "What are the main connectives used in Propositional Logic and what do they mean?",
+      "answer": "The main connectives are: \u2227 (and/conjunction), \u2228 (or/disjunction), \u21d2 (implies/conditional), \u21d4 (is equivalent/biconditional), and \u00ac (not/negation).",
+      "topic": "Propositional Logic",
+      "source": "PropositionalLogic.pdf"
+    },
+    {
+      "question": "What is a 'model' in the context of Propositional Logic?",
+      "answer": "A model is a 'possible world' or assignment of truth values to propositional symbols in which all sentences in a Knowledge Base (KB) are true.",
+      "topic": "Propositional Logic",
+      "source": "PropositionalLogic.pdf"
+    },
+    {
+      "question": "What is a 'valid sentence' or 'tautology'?",
+      "answer": "A valid sentence (or tautology) is a sentence that is true under all interpretations, regardless of the world.",
+      "topic": "Propositional Logic",
+      "source": "PropositionalLogic.pdf"
+    },
+    {
+      "question": "What does P |= Q mean in Propositional Logic?",
+      "answer": "P |= Q means 'P entails Q', indicating that whenever P is true, Q is also true. All models of P are also models of Q.",
+      "topic": "Propositional Logic",
+      "source": "PropositionalLogic.pdf"
+    },
+    {
+      "question": "What is the primary tool used in this guide for building OWL ontologies?",
+      "answer": "Prot\u00e9g\u00e9 5.5",
+      "topic": "Ontology Development Tools",
+      "source": "Prot\u00e9g\u00e9 5 New OWL Pizza Tutorial V3.2.pdf"
+    },
+    {
+      "question": "Who is the author of this revised version of the Prot\u00e9g\u00e9 tutorial?",
+      "answer": "Michael DeBellis",
+      "topic": "Tutorial Authorship",
+      "source": "Prot\u00e9g\u00e9 5 New OWL Pizza Tutorial V3.2.pdf"
+    },
+    {
+      "question": "What are some new technologies and concepts covered in this revised tutorial?",
+      "answer": "SWRL, SPARQL, SHACL, IRIs, and namespaces.",
+      "topic": "New Tutorial Content",
+      "source": "Prot\u00e9g\u00e9 5 New OWL Pizza Tutorial V3.2.pdf"
+    },
+    {
+      "question": "Where can users find the latest version of this tutorial and check for updates?",
+      "answer": "https://www.michaeldebellis.com/post/new-protege-pizza-tutorial",
+      "topic": "Tutorial Update Location",
+      "source": "Prot\u00e9g\u00e9 5 New OWL Pizza Tutorial V3.2.pdf"
+    },
+    {
+      "question": "What is the main subject matter that chapter 3-5 are based on?",
+      "answer": "The original Prot\u00e9g\u00e9 4 tutorial",
+      "topic": "Tutorial Revision Basis",
+      "source": "Prot\u00e9g\u00e9 5 New OWL Pizza Tutorial V3.2.pdf"
+    },
+    {
+      "question": "What is the primary goal of an Intelligent System?",
+      "answer": "To build an autonomous agent in a world that can achieve a specific goal.",
+      "topic": "Problem Solving",
+      "source": "State Space Search"
+    },
+    {
+      "question": "What two key elements does an intelligent agent need for problem-solving?",
+      "answer": "A clearly defined GOAL and a SET OF ACTIONS to choose from.",
+      "topic": "Problem Solving",
+      "source": "State Space Search"
+    },
+    {
+      "question": "What is State Space Search generally concerned with?",
+      "answer": "Finding a sequence of actions that leads from the initial state to the goal state.",
+      "topic": "State Space Search",
+      "source": "State Space Search"
+    },
+    {
+      "question": "What is the purpose of the 'ACTIONS' in the context of an intelligent system?",
+      "answer": "They are the choices an agent can make to transition between states and achieve the goal.",
+      "topic": "Problem Solving",
+      "source": "State Space Search"
+    },
+    {
+      "question": "What is the overall theme of the topic regarding Simple Search 1 and Simple Search 2?",
+      "answer": "Simple Search 1 and Simple Search 2 suggests that these will be two examples of basic search algorithms within the context of state space search.",
+      "topic": "State Space Search",
+      "source": "State Space Search"
+    }
+  ]
+}
