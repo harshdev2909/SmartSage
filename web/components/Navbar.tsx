@@ -1,14 +1,24 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import ScrambleAnimation from "./ScrambleAnimation";
+import { usePathname } from "next/navigation";
+import { createClient } from "@supabase/supabase-js";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const pathname = usePathname(); // Add this hook
+  const [userName, setUserName] = useState<string>("");
+  const [user, setUser] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("");
+  const [avatarUrl, setAvatarUrl] = useState<string>("");
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
@@ -16,7 +26,43 @@ export const Navbar = () => {
     { label: "How it Works", href: "#how-it-works" },
     { label: "Pricing", href: "#pricing" },
   ];
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Get user session
+        const {
+          data: { user },
+          error: userError,
+        } = await supabase.auth.getUser();
+        if (userError || !user) throw userError;
+        setUser(user.id);
+        setUserEmail(user.email || "");
 
+        // Generate avatar URL using UI Avatars
+        const uiAvatarUrl = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+          user.email || "User",
+        )}&background=random&size=128`;
+        setAvatarUrl(uiAvatarUrl);
+
+        // Fetch user profile from profiles table
+        const { data: profile, error: profileError } = await supabase
+          .from("user_profiles")
+          .select("full_name")
+          .eq("id", user.id)
+          .single();
+
+        if (profileError) throw profileError;
+
+        if (profile) {
+          setUserName(profile.full_name);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/80 backdrop-blur-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,9 +85,21 @@ export const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button className="rounded-xl">
-              <Link href="/login">Sign in</Link>
-            </Button>
+            {user ? (
+              <Button 
+                className="rounded-xl" 
+                onClick={async () => {
+                  await supabase.auth.signOut();
+                  window.location.href = '/';
+                }}
+              >
+                Logout
+              </Button>
+            ) : (
+              <Button className="rounded-xl">
+                <Link href="/login">Sign In</Link>
+              </Button>
+            )}
                   {/* <Button className="rounded-xl">
                     <Link href="/signup">Get Started</Link>
                   </Button> */}
