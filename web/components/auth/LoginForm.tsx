@@ -21,7 +21,7 @@ export default function LoginForm() {
     if (error) {
       console.error("Error signing in:", error.message);
     } else {
-      router.refresh();
+      // router.refresh();
       router.push("/dashboard");
     }
   };

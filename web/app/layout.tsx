@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Group Chat App",
+  title: "SmartSage",
   description: "Real-time group chat application",
 };
 

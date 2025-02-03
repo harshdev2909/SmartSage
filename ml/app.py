@@ -23,7 +23,7 @@ dotenv.load_dotenv()
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:3000"],  # Specify the frontend origin
+        "origins": ["http://localhost:3001"],  # Specify the frontend origin
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type"],
         "supports_credentials": True
